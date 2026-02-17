@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct StatsView: View {
+    @Environment(AuthViewModel.self) private var authViewModel
     @State private var viewModel = StatsViewModel()
 
     var body: some View {
@@ -57,9 +58,7 @@ struct StatsView: View {
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
                 Button {
-                    Task {
-                        try? AuthService.shared.logout()
-                    }
+                    authViewModel.logout()
                 } label: {
                     Label("Выход", systemImage: "rectangle.portrait.and.arrow.right")
                 }

@@ -5,20 +5,26 @@ import SwiftData
 struct MainTabView: View {
     var body: some View {
         TabView {
-            CameraView()
-                .tabItem {
-                    Label("Camera", systemImage: "camera.fill")
-                }
-            
-            UploadQueueView()
-                .tabItem {
-                    Label("Queue", systemImage: "list.bullet")
-                }
-            
-            StatsView()
-                .tabItem {
-                    Label("Stats", systemImage: "chart.bar.fill")
-                }
+            NavigationStack {
+                CameraView()
+            }
+            .tabItem {
+                Label("Камера", systemImage: "camera.fill")
+            }
+
+            NavigationStack {
+                UploadQueueView()
+            }
+            .tabItem {
+                Label("Очередь", systemImage: "list.bullet")
+            }
+
+            NavigationStack {
+                StatsView()
+            }
+            .tabItem {
+                Label("Статистика", systemImage: "chart.bar.fill")
+            }
         }
     }
 }
