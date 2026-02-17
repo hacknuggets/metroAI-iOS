@@ -1,18 +1,12 @@
-//
-//  metroAIv2App.swift
-//  metroAIv2
-//
-//  Created by Eugene Arzumanyan on 16.02.2026.
-//
-
 import SwiftUI
 import SwiftData
 
 @main
-struct metroAIv2App: App {
+struct metroAIApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            Photo.self,
+            UserStats.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -25,7 +19,7 @@ struct metroAIv2App: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
         }
         .modelContainer(sharedModelContainer)
     }

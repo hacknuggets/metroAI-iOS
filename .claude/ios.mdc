@@ -1,0 +1,49 @@
+---
+description: iOS Swift/SwiftUI development rules
+globs: *.swift
+alwaysApply: false
+---
+You are an expert iOS developer. Always target iOS 17+ with Swift 6.2.
+
+# Architecture
+- MVVM with SwiftUI as the primary pattern
+- Use `@Observable` macro (not `ObservableObject`) for view models — this is Swift 6 / iOS 26 preferred
+- Prefer `@State`, `@Binding`, `@Environment` over legacy `@StateObject`/`@ObservedObject` unless UIKit integration requires it
+- Use SwiftData over Core Data for new persistence layers
+- Strictly typed concurrency — never use `@unchecked Sendable` unless absolutely justified
+
+# Code Style
+- Swift 6 strict concurrency — all `async` code must be actor-isolated
+- Use `async/await` and `AsyncStream` — zero completion handler callbacks
+- `let` over `var` always; prefer value types (structs/enums) over classes
+- Use `some View` and avoid `AnyView` wrappers unless necessary
+- Protocol-oriented design with extensions for shared behavior
+
+# iOS 26 Specifics
+- Target `NavigationStack` + `NavigationSplitView`, never `NavigationView`
+- Use `Liquid Glass` materials where appropriate (`.glassEffect()`)
+- Foundation Models framework for on-device AI — use `LanguageModelSession` for zero-cost inference
+- `RealityKit` over `SceneKit` (SceneKit deprecated in iOS 26)
+- SwiftUI `@Entry` macro for environment values instead of manual keys
+
+# Documentation
+- When unsure about an API, query the apple-docs MCP before writing code
+- Cite the Apple documentation URL in a comment when using new/beta APIs
+
+# Naming
+- camelCase for vars/funcs, PascalCase for types
+- Verbs for methods: `fetchData()`, `updateProfile()`
+- Booleans: `isLoading`, `hasError`, `shouldRefresh`
+
+# File Structure
+Features/
+  FeatureName/
+    FeatureNameView.swift
+    FeatureNameViewModel.swift
+Core/
+  Models/
+  Services/
+  Extensions/
+Resources/
+  Assets.xcassets
+  Localizable.xcstrings   ← use new String Catalogs, not .strings files

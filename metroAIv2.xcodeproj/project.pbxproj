@@ -6,13 +6,32 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		67039B562F43ED77006D3F5F /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 67039B552F43ED77006D3F5F /* Config.xcconfig */; };
+		67463F402F439C8B00A5DCAE /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 67463F3F2F439C8B00A5DCAE /* KeychainAccess */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		67039B552F43ED77006D3F5F /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		67463F1D2F4398CF00A5DCAE /* metroAIv2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = metroAIv2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		67463F502F44000000A5DCAE /* Exceptions for "metroAIv2" folder in "metroAIv2" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 67463F1C2F4398CF00A5DCAE /* metroAIv2 */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		67463F1F2F4398CF00A5DCAE /* metroAIv2 */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				67463F502F44000000A5DCAE /* Exceptions for "metroAIv2" folder in "metroAIv2" target */,
+			);
 			path = metroAIv2;
 			sourceTree = "<group>";
 		};
@@ -23,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67463F402F439C8B00A5DCAE /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -34,6 +54,7 @@
 			children = (
 				67463F1F2F4398CF00A5DCAE /* metroAIv2 */,
 				67463F1E2F4398CF00A5DCAE /* Products */,
+				67039B552F43ED77006D3F5F /* Config.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +86,7 @@
 			);
 			name = metroAIv2;
 			packageProductDependencies = (
+				67463F3F2F439C8B00A5DCAE /* KeychainAccess */,
 			);
 			productName = metroAIv2;
 			productReference = 67463F1D2F4398CF00A5DCAE /* metroAIv2.app */;
@@ -94,6 +116,9 @@
 			);
 			mainGroup = 67463F142F4398CF00A5DCAE;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				67463F3E2F439C8B00A5DCAE /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 67463F1E2F4398CF00A5DCAE /* Products */;
 			projectDirPath = "";
@@ -109,6 +134,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67039B562F43ED77006D3F5F /* Config.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +274,7 @@
 		};
 		67463F2B2F4398D100A5DCAE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67039B552F43ED77006D3F5F /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -256,6 +283,11 @@
 				DEVELOPMENT_TEAM = 8FKQAK45KD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/metroAIv2/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_NAME)";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSCameraUsageDescription = "MetroAI needs camera access to capture photos of metro defects";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "MetroAI needs your location to identify the metro station where defects are found";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -266,7 +298,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kurt4ins.metroAIv2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.metroAI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -280,6 +312,7 @@
 		};
 		67463F2C2F4398D100A5DCAE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67039B552F43ED77006D3F5F /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -288,6 +321,11 @@
 				DEVELOPMENT_TEAM = 8FKQAK45KD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/metroAIv2/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_NAME)";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSCameraUsageDescription = "MetroAI needs camera access to capture photos of metro defects";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "MetroAI needs your location to identify the metro station where defects are found";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -298,7 +336,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kurt4ins.metroAIv2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.metroAI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -332,6 +370,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		67463F3E2F439C8B00A5DCAE /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				kind = exactVersion;
+				version = 4.2.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		67463F3F2F439C8B00A5DCAE /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 67463F3E2F439C8B00A5DCAE /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 67463F152F4398CF00A5DCAE /* Project object */;
 }
