@@ -100,6 +100,7 @@ struct AnnotationFormView: View {
             }
             .navigationTitle("Описание дефекта")
             .navigationBarTitleDisplayMode(.inline)
+            .scrollDismissesKeyboard(.interactively)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Отмена") {
@@ -129,12 +130,10 @@ struct AnnotationFormView: View {
                     )
                     .navigationTitle("Тип дефекта")
                     .navigationBarTitleDisplayMode(.inline)
-                    .toolbar {
-                        ToolbarItem(placement: .confirmationAction) {
-                            Button("Готово") {
-                                showDefectPicker = false
-                            }
-                        }
+                }
+                .onChange(of: viewModel.selectedDefect) { _, newValue in
+                    if newValue != nil {
+                        showDefectPicker = false
                     }
                 }
             }
@@ -148,12 +147,10 @@ struct AnnotationFormView: View {
                     )
                     .navigationTitle("Выбор станции")
                     .navigationBarTitleDisplayMode(.inline)
-                    .toolbar {
-                        ToolbarItem(placement: .confirmationAction) {
-                            Button("Готово") {
-                                showStationPicker = false
-                            }
-                        }
+                }
+                .onChange(of: viewModel.selectedStation) { _, newValue in
+                    if newValue != nil {
+                        showStationPicker = false
                     }
                 }
             }
