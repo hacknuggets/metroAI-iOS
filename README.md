@@ -83,8 +83,8 @@ metroAIv2/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/metroAIv2.git
-cd metroAIv2
+git clone https://github.com/hacknuggets/metroAI-iOS.git
+cd metroAI-iOS
 ```
 
 ### 2. Install Dependencies
